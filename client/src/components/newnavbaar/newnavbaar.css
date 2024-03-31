@@ -1,0 +1,71 @@
+.new_nav {
+    width: 100%;
+    height: 40px;
+    background-color: #232f3e;
+    position: relative;
+    top: 60px;
+}
+
+.new_nav .nav_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_nav .nav_data .left_data {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+.new_nav .nav_data .left_data p {
+    color: #fff1f1;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer; /* Adding cursor pointer for better UX */
+}
+
+.new_nav .nav_data .left_data .dropdown p {
+    color: #000000; /* Set subcategory font color to white */
+}
+
+.new_nav .nav_data .left_data .category {
+    position: relative; /* Necessary for positioning the dropdown relative to it */
+}
+
+/* Styles for the dropdown menu */
+.new_nav .nav_data .left_data .dropdown {
+    position: absolute; /* Position the dropdown absolutely */
+    top: calc(100% + 5px); /* Adjust the position as needed */
+    left: 0; /* Position the dropdown at the left edge of the category */
+    background-color: #fffcfc;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    z-index: 999; /* Ensure the dropdown appears above other elements */
+    width: 130px;
+}
+
+.new_nav .nav_data .left_data .category:hover .dropdown,
+.new_nav .nav_data .left_data .dropdown:hover {
+    display: block;
+}
+/* Display the dropdown menu when hovering over the category item */
+.new_nav .nav_data .left_data .category:hover .dropdown {
+    display: block;
+}
+
+/* Styles for the individual options within the dropdown menu */
+.dropdown p {
+    color: #333; /* Adjust text color */
+    margin: 10px 0; /* Adjust margin */
+    font-size: 13px; /* Adjust font size */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Media query to hide the navigation bar on small screens */
+@media (max-width: 808px) {
+    .new_nav {
+        display: none;
+    }
+}
